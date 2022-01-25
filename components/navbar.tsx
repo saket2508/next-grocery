@@ -6,7 +6,7 @@ export default function Navbar(){
         <nav className='bg-gray-700 text-white p-4 fixed top-0 w-full'>
             <div className="sm:flex justify-between items-center w-full hidden">
                 <h2 className="text-base lg:text-xl font-semibold tracking-wide">
-                    GroceRy App
+                    Grocery App
                 </h2>
                 <div className="flex flex-row items-end">
                     <div className="flex grow hidden sm:block">
