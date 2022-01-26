@@ -31,8 +31,8 @@ async function migrate(){
             CREATE TABLE IF NOT EXISTS users (
                 id VARCHAR(36) NOT NULL DEFAULT (uuid()) PRIMARY KEY,
                 name VARCHAR(25) NOT NULL,
-                email VARCHAR(50) NOT NULL,
-                password BINARY(40) NOT NULL,
+                email VARCHAR(50) NOT NULL UNIQUE,
+                password VARCHAR(60) NOT NULL,
                 created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
                 updated_at 
                     TIMESTAMP 

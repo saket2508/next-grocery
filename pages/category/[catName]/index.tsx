@@ -6,6 +6,7 @@ import { GetStaticProps } from "next";
 import { GetStaticPaths } from 'next';
 import { products, categories } from "../../../products.dummy"
 import Navbar from "../../../components/navbar"
+import BottomNavbar from "../../../components/bottomNavbar";
 
 type CategoryProps = {
     catName: string;
@@ -80,6 +81,7 @@ const Category: NextPage<CategoryProps> = (props: CategoryProps) => {
                         </div>
                     </div>
                 </main>
+                <BottomNavbar/>
             </div>
         </div>
     )

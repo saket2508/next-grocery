@@ -16,7 +16,7 @@ type ProductProps = {
 const Product: NextPage<ProductProps> = (props: ProductProps) => {
     const { catName, id } = props
     const router = useRouter()
-    const product : Product = products[parseInt(id) - 1]
+    const product = products[parseInt(id) - 1]
 
     const getPriceDifference = (item: Product) => {
         return parseInt(item.price_before_discount) - parseInt(item.price);
