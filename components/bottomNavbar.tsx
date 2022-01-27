@@ -1,6 +1,10 @@
+import { useContext } from "react"
 import Link from "next/link"
+import { CartContext } from '../context/CartContext'
 
 export default function BottomNavbar(){
+    const { cart } = useContext(CartContext)
+
     return(
         <nav className="block sm:hidden bottom-0 right-0 left-0 flex-0 fixed overflow-hidden w-100">
             <div className="py-5 px-10 bottomnavbar bg-white text-gray-700 shadow-lg w-full flex justify-around">
@@ -18,12 +22,12 @@ export default function BottomNavbar(){
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
                     </svg>
                     Bag
-                    {/* {cart && cart.length > 0 && <div className="bg-red-700 h-5 w-5 flex justify-center items-center text-white rounded-full absolute right-0 top-0 text-xs">
+                    {cart && cart.length > 0 && <div className="bg-red-700 h-5 w-5 flex justify-center items-center text-white rounded-full absolute right-0 top-0 text-xs">
                         {cart.length}
-                    </div>} */}
+                    </div>}
                 </div>
                 </Link>
-            </div>
+                </div>
         </nav>
     )
 }

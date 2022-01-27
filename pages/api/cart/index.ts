@@ -16,8 +16,8 @@ async function handler(req: CustomRequest, res: NextApiResponse) {
         `,
             currUserid
         )
-        let usersCart = orders!.map(({ product_id, qty }) => ({ product_id, qty }))
-        return res.status(200).json({ cart: usersCart, msg: "Fetched user's cart" })
+        let users_cart = orders!.map(({ product_id, qty }) => ({ product_id, qty }))
+        return res.status(200).json({ users_cart, msg: "Fetched user's cart" })
     } catch (error) {
         console.error(error)
         return res.status(501).json({ msg: "Server Error" })

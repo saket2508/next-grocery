@@ -16,8 +16,8 @@ export default function authenticate(handler: NextApiHandler){
         }
         try {
             let key = cookie.parse(jwt_cookie).token
-            const currUser = jwt.verify(key, 'secret')
-            req.user = currUser
+            const curr_user = jwt.verify(key, process.env.JWT_SECRET!)
+            req.user = curr_user
             return handler(req, res)
         } catch (error) {
             console.error(error)

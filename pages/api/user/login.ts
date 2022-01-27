@@ -22,7 +22,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
         if(!valid_pass) {
             return res.status(401).json({ msg: 'Invalid username or password' }) 
         }
-        const token = jwtGenerator(target_user.id)
+        const token = jwtGenerator(target_user[0].id)
             // save token in http-only cookie
         res.setHeader(
             "Set-Cookie",
@@ -33,7 +33,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
             path: "/",
             })
         )
-        res.status(201).json({ "success": true, message: "User is signed in", username: target_user[0].name })
+        res.status(201).json({ "success": true, message: "User is signed in", name: target_user[0].name })
     } catch (error) {
         console.error('Error signing in user: ', error);
         return res.status(501).json({ msg: 'Server Error' });

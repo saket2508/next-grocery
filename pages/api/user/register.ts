@@ -46,7 +46,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
               path: "/",
             })
           )
-        res.status(201).json({ "success": true, message: "Registered user", username: new_user[0].name })
+        res.status(201).json({ "success": true, message: "Registered user", name: new_user[0].name })
     } catch (error) {
         console.error('Error signing up user: ', error)
         return res.status(501).json({ msg: 'Server Error' })   

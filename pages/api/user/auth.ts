@@ -16,7 +16,7 @@ async function handler(req: CustomRequest, res: NextApiResponse) {
         `,
             id
         )
-        if(!currUser){
+        if(!currUser || currUser.length === 0){
             return res.status(401).json({ msg: 'Sign in Again' })
         }
         return res.status(200).json({ msg: 'Fetched user info', name: currUser[0].name })

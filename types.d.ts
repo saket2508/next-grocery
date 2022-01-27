@@ -1,6 +1,6 @@
 declare type Order = {
-    id: string;
-    name: string;
+    id?: string;
+    product_id: string;
     qty: number;
     updated_at? : Date;
     created_at?: Date;
@@ -13,6 +13,7 @@ declare type Product = {
     price_before_discount: string;
     discount: string;
     quantity: string;
+    items?: number;
     img: string;
     category: string;
     img_lg: string;
