@@ -1,14 +1,14 @@
-import { createContext, useContext, useState, useEffect, FC } from "react";
-import { AuthContext } from "./AuthContext";
-import axios from 'axios';
-import { useRouter } from "next/router";
+import { createContext, useContext, useState, useEffect, FC } from "react"
+import { AuthContext } from "./AuthContext"
+import axios from 'axios'
+import { useRouter } from "next/router"
 
 interface CartContextState{
-    cart: Order[] | null,
-    cartLoading: boolean,
-    addItem?: (id : string) => void,
-    removeItem?: (id: string) => void,
-    signOut?: () => void
+    cart: Order[] | null;
+    cartLoading: boolean;
+    addItem?: (id : string) => void;
+    removeItem?: (id: string) => void;
+    signOut?: () => void;
 }
 
 const defaultState : CartContextState = {
@@ -16,24 +16,24 @@ const defaultState : CartContextState = {
     cartLoading: true
 }
 
-const CartContext = createContext<CartContextState>(defaultState);
+const CartContext = createContext<CartContextState>(defaultState)
 
 const CartProvider: FC = ({ children }) => {
-    var router = useRouter();
-    const [ cartLoading, setCartLoading ] = useState<boolean>(defaultState.cartLoading);
-    const { isAuth, _setError, _setUsername, _setAuth } = useContext(AuthContext);
-    const [ cart, setCart ] = useState<Order[] | null>(null);
+    var router = useRouter()
+    const [ cartLoading, setCartLoading ] = useState<boolean>(defaultState.cartLoading)
+    const { isAuth, _setError, _setUsername, _setAuth } = useContext(AuthContext)
+    const [ cart, setCart ] = useState<Order[] | null>(null)
 
     const signOut = async () => {
         // logout and delete jwt cookie
         try {
-            await axios.get('/api/user/logout', { withCredentials: true });
-            router.push('/login');
-            _setUsername!(null);
-            _setAuth!(false);
-            setCart(null);
+            await axios.get('/api/user/logout', { withCredentials: true })
+            router.push('/login')
+            _setUsername!(null)
+            _setAuth!(false)
+            setCart(null)
         } catch (error) {
-            console.error(error);
+            console.error(error)
         }
     }
 
@@ -41,20 +41,20 @@ const CartProvider: FC = ({ children }) => {
         axios.post('/api/cart/add', { id }, { withCredentials: true })
             .then(res => res.data)
             .then(data => {
-                let idx = cart!.findIndex(item => item.product_id === id);
+                let idx = cart!.findIndex(item => item.product_id === id)
                 if(idx === -1){
-                    const { product } = data;
-                    setCart([product, ...cart!]);
+                    const { product } = data
+                    setCart([product, ...cart!])
                 } else {
-                    let itemToUpdate = cart![idx];
-                    itemToUpdate.qty += 1;
-                    let _cart = [itemToUpdate, ...cart!.slice(0, idx), ...cart!.slice(idx+1)];
-                    setCart(_cart);
+                    let itemToUpdate = cart![idx]
+                    itemToUpdate.qty += 1
+                    let _cart = [itemToUpdate, ...cart!.slice(0, idx), ...cart!.slice(idx+1)]
+                    setCart(_cart)
                 }
             }).catch(err => {
-                _setError!(true);
-                console.error(err);
-            });
+                _setError!(true)
+                console.error(err)
+            })
     }
 
     const removeItem = (id: string) => {
@@ -63,16 +63,16 @@ const CartProvider: FC = ({ children }) => {
                 let target_item = cart!.find(item => item.product_id === id)
                 let target_idx = cart!.indexOf(target_item!)
                 if(target_item!.qty > 1){
-                    target_item!.qty -= 1;
-                    let _cart = [target_item!, ...cart!.slice(0, target_idx), ...cart!.slice(target_idx+1)];
-                    setCart(_cart);  
+                    target_item!.qty -= 1
+                    let _cart = [target_item!, ...cart!.slice(0, target_idx), ...cart!.slice(target_idx+1)]
+                    setCart(_cart)  
                 } else {
-                    let _cart = [...cart!.slice(0, target_idx), ...cart!.slice(target_idx+1)];
-                    setCart(_cart);
+                    let _cart = [...cart!.slice(0, target_idx), ...cart!.slice(target_idx+1)]
+                    setCart(_cart)
                 }
             }).catch(err => {
-                _setError!(true);
-                console.error(err);
+                _setError!(true)
+                console.error(err)
             })
     }
 
@@ -82,19 +82,19 @@ const CartProvider: FC = ({ children }) => {
                 .then(res => res.data)
                 .then(data => {
                     const { users_cart } = data
-                    setCart(users_cart);
-                    setCartLoading(false);
+                    setCart(users_cart)
+                    setCartLoading(false)
                 }).catch(err => {
-                    _setError!(true);
-                    console.error(err);
+                    _setError!(true)
+                    console.error(err)
                 })
         } else {
-            setCartLoading(false);
+            setCartLoading(false)
         }
     }
 
     useEffect(() => {
-        getCart();
+        getCart()
     }, [isAuth])
 
     return(

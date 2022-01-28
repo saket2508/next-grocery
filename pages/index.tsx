@@ -1,6 +1,7 @@
 import { useContext } from 'react'
 import type { NextPage } from 'next'
 import Head from 'next/head'
+import Error from './_error'
 import Image from 'next/image'
 import Navbar from '../components/navbar'
 import BottomNavbar from '../components/bottomNavbar'
@@ -11,8 +12,12 @@ import { AuthContext } from '../context/AuthContext'
 import { CartContext } from '../context/CartContext'
 
 const Home: NextPage = () => {
-  const { authLoading } = useContext(AuthContext)
+  const { authLoading, error } = useContext(AuthContext)
   const { cartLoading } = useContext(CartContext)
+
+  if(error){
+    return <Error statusCode={500}/>
+  }  
 
   return (
     <div>

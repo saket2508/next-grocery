@@ -57,7 +57,6 @@ export function ActionButton(props: ActionButtonPropType){
 }
 
 export function ActionButtonLarge(props: ActionButtonPropType){
-    console.log(props)
     const { isAuth, product, cart, addItem, removeItem } = props
     if(!isAuth || !cart){
         return(

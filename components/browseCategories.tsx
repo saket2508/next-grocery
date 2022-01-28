@@ -117,7 +117,7 @@ export default function BrowseCategories(){
                   <div>
                   <div className="flex justify-between items-center">
                       <div className="inline-flex justify-start items-center">
-                          <Link href="/category/Pet Care">
+                          <Link href="/category/Pet Food">
                             <img className="h-24 w-24 object-cover" src="https://images-na.ssl-images-amazon.com/images/I/61DtYJyqHeL._SX679_.jpg"/>
                           </Link>
                           <div className="pl-4">

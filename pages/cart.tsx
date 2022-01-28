@@ -117,7 +117,7 @@ const Cart: NextPage = () => {
                                                             </div>
                                                         </div>
                                                         <div className="hidden sm:block font-bold text-sm sm:text-lg pl-4">
-                                                            ₹{parseInt(item.price)*(item.items!)}
+                                                            ₹{item.price}
                                                         </div>
                                                     </div>
                                                 </div>
