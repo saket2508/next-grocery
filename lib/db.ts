@@ -1,34 +1,29 @@
-import mysql from 'serverless-mysql'
+import { rejects } from 'assert'
+import mySql from 'mysql2'
 
 export const db = process.env.NODE_ENV === 'development' 
-    ? mysql({
-        config:{
-            host: process.env.DB_HOST,
-            database: process.env.DB_NAME,
-            user: process.env.DB_USER,
-            password: process.env.DB_PASSWORD,
-            port: parseInt(process.env.DB_PORT!)
-        }
+    ? mySql.createConnection({
+        host: process.env.DB_HOST,
+        user: process.env.DB_USER,
+        port: parseInt(process.env.DB_PORT!),
+        database: process.env.DB_NAME
     })
 
-    : mysql({
-        config:{
-            host: process.env.DB_PROD_HOST,
-            database: process.env.DB_PROD_NAME,
-            user: process.env.DB_PROD_USER,
-            password: process.env.DB_PROD_PASSWORD,
-        }
+    : mySql.createConnection({
+        uri: process.env.DB_URI
     })
 
-export async function query(
+export function query(
     q: string,
     values: (string | number)[] | string | number = []
-): Promise<Array<any> | undefined> {
-    try {
-        const results: Array<any> = await db.query(q, values)
-        await db.end()
-        return results
-    } catch (err) {
-        console.error(err)
-    }
+) : Promise<any | undefined> {
+    return new Promise((resolve, reject) => {
+        db.query(q, values, (err, results) => {
+          if(err) {
+            console.error(err)
+            reject(err)  
+          } 
+          resolve(results)
+        })
+    })
 }

@@ -1,36 +1,31 @@
 const path = require('path')
-const mySql = require('serverless-mysql')
+const mySql = require('mysql2')
 const envPath = path.resolve(process.cwd(), '.env.local')
 
 require('dotenv').config({ path: envPath })
 
 export const db = process.env.NODE_ENV === 'development' 
-    ? mySql({
-        config:{
-            host: process.env.DB_HOST,
-            database: process.env.DB_NAME,
-            user: process.env.DB_USER,
-            port: process.env.DB_PORT
-        }
+    ? mySql.createConnection({
+        host: process.env.DB_HOST,
+        user: process.env.DB_USER,
+        port: process.env.DB_PORT,
+        database: process.env.DB_NAME
     })
 
-    : mySql({
-        config:{
-            host: process.env.DB_PROD_HOST,
-            database: process.env.DB_PROD_NAME,
-            user: process.env.DB_PROD_USER,
-            password: process.env.DB_PROD_PASSWORD,
-        }
+    : mySql.createConnection({
+        uri: process.env.DB_URI
     })
 
-async function query(q){
-    try {
-        const results = await db.query(q)
-        await db.end()
-        return results
-    } catch (err) {
-        console.error(err)
-    }
+function query(q, values)  {
+    return new Promise((resolve, reject) => {
+        db.query(q, values, (err, results) => {
+          if(err) {
+            console.error(err)
+            reject(err)  
+          } 
+          resolve(results)
+        })
+    })
 }
 
 async function migrate(){
