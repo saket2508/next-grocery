@@ -155,7 +155,7 @@ const Register: NextPage = () => {
                                   </button>}
                             </div>
                             <div className="flex items-center justify-center gap-1 pb-1 text-sm text-center text-gray-500 font-medium">
-                                Have an account? <div className="hover:underline text-gray-500 font-semibold">
+                                {"Have an account?"} <div className="hover:underline text-gray-500 font-semibold">
                                     <Link href="/login">Log in</Link>
                                 </div>
                             </div>
