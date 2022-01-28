@@ -13,7 +13,11 @@ export const db = process.env.NODE_ENV === 'development'
     })
 
     : mySql.createConnection({
-        uri: process.env.DB_URI
+        host: process.env.DB_PROD_HOST,
+        user: process.env.DB_PROD_USER,
+        password: process.env.DB_PROD_PASSWORD,
+        database: process.env.DB_PROD_NAME,
+        ssl: {}
     })
 
 function query(q, values)  {
