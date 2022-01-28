@@ -1,4 +1,3 @@
-import { rejects } from 'assert'
 import mySql from 'mysql2'
 
 export const db = process.env.NODE_ENV === 'development' 

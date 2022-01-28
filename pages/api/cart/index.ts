@@ -9,7 +9,7 @@ interface CustomRequest extends NextApiRequest{
 async function handler(req: CustomRequest, res: NextApiResponse) {
     try {
         const currUserid = req.user.id
-        const orders = await query(`
+        const orders: Array<any> = await query(`
             SELECT * FROM cart
             WHERE user_id = ?
             ORDER BY updated_at DESC
