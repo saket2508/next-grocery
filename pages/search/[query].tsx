@@ -55,7 +55,7 @@ const Search: NextPage<SearchProps> = (props: SearchProps) => {
                                     <img className="h-72 w-72 sm:h-80 sm:w-80 mt-1" src="/cart_empty.png"/>
                                     <div className='mt-3 mb-4 text-center'>
                                         <h4 className='text-black text-xl font-semibold pb-1'>
-                                            No results found for "{query}"
+                                            {`No results found for \"${query}\"`}
                                         </h4>
                                     </div>
                                     <div>
