@@ -1,5 +1,6 @@
-import Head from "next/head";
-import { NextPage } from "next";
+import Head from "next/head"
+import { NextPage } from "next"
+import Image from 'next/image'
 
 type ErrorProps = {
     statusCode?: number
@@ -7,7 +8,7 @@ type ErrorProps = {
 
 
 const Error: NextPage<ErrorProps> = (props : ErrorProps) => {
-    const { statusCode } = props;
+    const { statusCode } = props
     
     if(statusCode === 500 || statusCode === 501){
         return(
@@ -19,7 +20,7 @@ const Error: NextPage<ErrorProps> = (props : ErrorProps) => {
                 </Head>
                 <main className="w-full">
                     <div className="mt-10 flex flex-col justify-center items-center">
-                        <img className="h-72 w-72 sm:h-80 sm:w-80" src='/server_error.png'/>
+                        <img alt="Server Error" className="h-72 w-72 sm:h-80 sm:w-80" src='/assets/server_error.png'/>
                         <h1 className="text-4xl text-black pt-4">Error</h1>
                         <p className="text-gray-600 text-sm sm:text-base tracker-wide mt-3">
                             Could not get data from the server.
@@ -39,7 +40,7 @@ const Error: NextPage<ErrorProps> = (props : ErrorProps) => {
             </Head>
             <main className="w-full">
                 <div className="mt-10 flex flex-col justify-center items-center">
-                    <img className="h-72 w-72 sm:h-80 sm:w-80" src='/not_found.png'/>
+                    <img alt="Page Not Found" className="h-72 w-72 sm:h-80 sm:w-80" src='/assets/not_found.png'/>
                     <h1 className="text-5xl text-black pt-4">404</h1>
                     <p className="text-gray-600 text-sm sm:text-base tracker-wide mt-3">
                         The page you are looking for does not exist.

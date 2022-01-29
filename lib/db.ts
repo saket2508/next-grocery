@@ -1,14 +1,15 @@
-import mySql from 'mysql2'
+import mysql from 'mysql2'
 
 export const db = process.env.NODE_ENV === 'development' 
-    ? mySql.createConnection({
+    ? mysql.createConnection({
         host: process.env.DB_HOST,
         user: process.env.DB_USER,
+        password: process.env.DB_PASSWORD,
         port: parseInt(process.env.DB_PORT!),
         database: process.env.DB_NAME
     })
 
-    : mySql.createConnection({
+    : mysql.createConnection({
         host: process.env.DB_PROD_HOST,
         user: process.env.DB_PROD_USER,
         password: process.env.DB_PROD_PASSWORD,

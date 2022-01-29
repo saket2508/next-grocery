@@ -82,7 +82,7 @@ const Login: NextPage = () => {
                 <div className="pt-10 flex justify-center">
                     <div className="w-full mx-4 sm:m-0 md:w-3/4 lg:w-1/2 xl:w-1/3">
                         <div className="inline-block">
-                            <Link href='/'>
+                            <Link href='/' passHref>
                                 <div className="flex items-center gap-1 text-sm font-bold text-gray-500 mb-4">
                                     <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 16l-4-4m0 0l4-4m-4 4h18" />

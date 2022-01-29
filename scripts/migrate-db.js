@@ -1,18 +1,19 @@
 const path = require('path')
-const mySql = require('mysql2')
+const mysql = require('mysql2')
 const envPath = path.resolve(process.cwd(), '.env.local')
 
 require('dotenv').config({ path: envPath })
 
 export const db = process.env.NODE_ENV === 'development' 
-    ? mySql.createConnection({
+    ? mysql.createConnection({
         host: process.env.DB_HOST,
         user: process.env.DB_USER,
+        password: process.env.DB_PASSWORD,
         port: process.env.DB_PORT,
         database: process.env.DB_NAME
     })
 
-    : mySql.createConnection({
+    : mysql.createConnection({
         host: process.env.DB_PROD_HOST,
         user: process.env.DB_PROD_USER,
         password: process.env.DB_PROD_PASSWORD,

@@ -19,7 +19,8 @@ const Search: NextPage<SearchProps> = (props: SearchProps) => {
     const { isAuth, authLoading } = useContext(AuthContext)
     const { cart, addItem, removeItem, cartLoading } = useContext(CartContext)
     const relevantProducts = products.filter((product) => 
-        product.name.toLowerCase().includes(query) || product.tags.includes(query) 
+        product.name.toLowerCase().includes(query) || 
+        product.tags.map(tag => tag.toLowerCase()).includes(query) 
     )
 
     return (
@@ -52,21 +53,21 @@ const Search: NextPage<SearchProps> = (props: SearchProps) => {
                                     </div>
                                 </div>        
                                 <div className="flex flex-col justify-center items-center">
-                                    <img className="h-72 w-72 sm:h-80 sm:w-80 mt-1" src="/cart_empty.png"/>
+                                    <img className="h-72 w-72 sm:h-80 sm:w-80 mt-1" src="/assets/cart_empty.png"/>
                                     <div className='mt-3 mb-4 text-center'>
                                         <h4 className='text-black text-xl font-semibold pb-1'>
                                             {`No results found for \"${query}\"`}
                                         </h4>
                                     </div>
                                     <div>
-                                        <Link href ="/">
+                                        <Link href ="/" passHref>
                                             <button className="py-1 px-2 border border-yellow-600 text-yellow-600 uppercase hover:text-white hover:bg-yellow-600 rounded-full w-64 focus:outline-none">
                                                 Continue shopping
                                             </button>
                                         </Link>
                                     </div>
                                     {!isAuth && <div className='mt-2 pb-2'>
-                                        <Link href='/login'>
+                                        <Link href='/login' passHref>
                                             <button className="py-1 px-2 border border-gray-600 text-gray-600 uppercase hover:text-white hover:bg-gray-600 rounded-full w-64 focus:outline-none">
                                                 Log in
                                             </button>
@@ -99,7 +100,7 @@ const Search: NextPage<SearchProps> = (props: SearchProps) => {
                                                     {item.discount}% Off
                                                 </div>
                                                 <div className="mb-3 flex justify-center">
-                                                    <Link href={`/category/${item.category}/${item.id}`}>
+                                                    <Link href={`/category/${item.category}/${item.id}`} passHref>
                                                         <img className="h-32 w-32 object-fit" src={item.img_lg}/>
                                                     </Link>
                                                 </div>

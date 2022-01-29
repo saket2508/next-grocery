@@ -63,7 +63,7 @@ const Category: NextPage<CategoryProps> = (props: CategoryProps) => {
                                             {item.discount}% Off
                                         </div>
                                         <div className="mb-3 flex justify-center">
-                                            <Link href={`/category/${catName}/${item.id}`}>
+                                            <Link href={`/category/${catName}/${item.id}`} passHref>
                                                 <img className="h-32 w-32 object-fit" src={item.img_lg}/>
                                             </Link>
                                         </div>

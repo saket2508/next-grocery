@@ -39,7 +39,6 @@ const AuthProvider: FC = ({ children }) => {
             axios.get('/api/user/auth', { withCredentials: true })
                 .then(res => res.data)
                 .then(data =>{
-                    console.log(data)
                     const { name } = data
                     setIsAuth(true)
                     setUsername(name)
