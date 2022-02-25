@@ -2,7 +2,7 @@
 
 ## Todos
 
-- [ ] Optimise images by using Next's custom `<Image/>` tag.
+- [x] Optimise images by using Next's custom `<Image/>` tag.
 
 - [x] Add loader/spinner animation.
 

@@ -653,9 +653,9 @@ export const products: Product[] = [
         discount: '7',
         price: '56',
         quantity: '1 x 280 g',
-        img: 'https://m.media-amazon.com/images/I/81dx6ACnsJS._AC_UL480_FMwebp_QL65_.jpg',
+        img: 'https://m.media-amazon.com/images/I/91ySC73lgfL._AC_UL480_FMwebp_QL65_.jpg',
         category: 'Noodles, Sauces & Instant Food',
-        img_lg: 'https:///m.media-amazon.com/images/I/81dx6ACnsJS._SL1500_.jpg',
+        img_lg: 'https://m.media-amazon.com/images/I/91ySC73lgfL._SL1500_.jpg',
         tags: ['Top Ramen', 'Instant Noodles', 'Instant Foood', 'Noodles, Sauces & Instant Food'],
     },
     {
