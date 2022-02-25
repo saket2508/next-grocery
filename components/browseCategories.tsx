@@ -1,8 +1,9 @@
-import Link from "next/link";
+import Link from 'next/link';
+import Image from 'next/image';
 
 export default function BrowseCategories() {
-  return (
-    <div className="max-w-full pb-8">
+    return (
+        <div className="max-w-full pb-8">
       <div className="px-6 pt-4">
         <div className="text-lg sm:text-xl font-semibold pt-6">
           Browse Categories
@@ -14,9 +15,11 @@ export default function BrowseCategories() {
                 <div className="flex justify-between items-center">
                   <div className="inline-flex justify-start items-center">
                     <Link href="/category/Food & Snacks" passHref>
-                      <img
-                        className="h-24 w-24 object-cover"
-                        src="https://5.imimg.com/data5/SELLER/Default/2021/1/ZP/EN/HA/121085193/71uq3b9609l-sl1500--500x500.jpg"
+                      <Image
+                        height={100}
+                        width={100}
+                        src="https://m.media-amazon.com/images/I/71J93R3+TkL._AC_UL480_FMwebp_QL65_.jpg"
+                        objectFit='contain'
                       />
                     </Link>
                     <div className="pl-4">
@@ -30,7 +33,7 @@ export default function BrowseCategories() {
                       </div>
                     </div>
                   </div>
-                  <div className="text-yellow-600 pl-4">
+                  <div className="text-yellow-600 pl-2">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       className="h-4 w-4"
@@ -54,9 +57,11 @@ export default function BrowseCategories() {
                 <div className="flex justify-between items-center">
                   <div className="inline-flex justify-start items-center">
                     <Link href="/category/Beverages" passHref>
-                      <img
-                        className="h-24 w-24 object-cover"
-                        src="https://images-na.ssl-images-amazon.com/images/I/71PiszDkulL._SL1500_.jpg"
+                      <Image
+                        height={100}
+                        width={100}
+                        src="https://m.media-amazon.com/images/I/71PiszDkulL._SL1500_.jpg"
+                        objectFit='contain'
                       />
                     </Link>
                     <div className="pl-4">
@@ -70,7 +75,7 @@ export default function BrowseCategories() {
                       </div>
                     </div>
                   </div>
-                  <div className="text-yellow-600 pl-4">
+                  <div className="text-yellow-600 pl-2">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       className="h-4 w-4"
@@ -94,9 +99,12 @@ export default function BrowseCategories() {
                 <div className="flex justify-between items-center">
                   <div className="inline-flex justify-start items-center">
                     <Link href="/category/Fruits & Vegetables" passHref>
-                      <img
+                      <Image
+                        height={100}
+                        width={100}
                         className="h-24 w-24 object-fit"
                         src="https://m.media-amazon.com/images/I/319jVF8LQyS._AC_UL480_FMwebp_QL65_.jpg"
+                        objectFit='contain'
                       />
                     </Link>
                     <div className="pl-4">
@@ -110,7 +118,7 @@ export default function BrowseCategories() {
                       </div>
                     </div>
                   </div>
-                  <div className="text-yellow-600 pl-4">
+                  <div className="text-yellow-600 pl-2">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       className="h-4 w-4"
@@ -134,9 +142,11 @@ export default function BrowseCategories() {
                 <div className="flex justify-between items-center">
                   <div className="inline-flex justify-start items-center">
                     <Link href="/category/Personal Care" passHref>
-                      <img
-                        className="h-24 w-24 object-cover"
-                        src="https://images-na.ssl-images-amazon.com/images/I/71KKYecRpiL._SY355_.jpg"
+                      <Image
+                        height={100}
+                        width={100}
+                        src="https://m.media-amazon.com/images/I/71KKYecRpiL._SY355_.jpg"
+                        objectFit='contain'
                       />
                     </Link>
                     <div className="pl-4">
@@ -150,7 +160,7 @@ export default function BrowseCategories() {
                       </div>
                     </div>
                   </div>
-                  <div className="text-yellow-600 pl-4">
+                  <div className="text-yellow-600 pl-2">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       className="h-4 w-4"
@@ -174,9 +184,11 @@ export default function BrowseCategories() {
                 <div className="flex justify-between items-center">
                   <div className="inline-flex justify-start items-center">
                     <Link href="/category/Pet Food" passHref>
-                      <img
-                        className="h-24 w-24 object-cover"
-                        src="https://images-na.ssl-images-amazon.com/images/I/61DtYJyqHeL._SX679_.jpg"
+                      <Image
+                        height={100}
+                        width={100}
+                        src="https://m.media-amazon.com/images/I/61DtYJyqHeL._SX679_.jpg"
+                        objectFit='contain'
                       />
                     </Link>
                     <div className="pl-4">
@@ -190,7 +202,7 @@ export default function BrowseCategories() {
                       </div>
                     </div>
                   </div>
-                  <div className="text-yellow-600 pl-4">
+                  <div className="text-yellow-600 pl-2">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       className="h-4 w-4"
@@ -214,9 +226,11 @@ export default function BrowseCategories() {
                 <div className="flex justify-between items-center">
                   <div className="inline-flex justify-start items-center">
                     <Link href="/category/Household Items" passHref>
-                      <img
-                        className="h-24 w-24 object-cover"
-                        src="https://images-na.ssl-images-amazon.com/images/I/61zl3nbmnBL._SX679_.jpg"
+                      <Image
+                        height={100}
+                        width={100}
+                        src="https://m.media-amazon.com/images/I/61zl3nbmnBL._SX679_.jpg"
+                        objectFit='contain'
                       />
                     </Link>
                     <div className="pl-4">
@@ -230,7 +244,7 @@ export default function BrowseCategories() {
                       </div>
                     </div>
                   </div>
-                  <div className="text-yellow-600 pl-4">
+                  <div className="text-yellow-600 pl-2">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       className="h-4 w-4"
@@ -257,9 +271,11 @@ export default function BrowseCategories() {
                       href="/category/Noodles, Sauces & Instant Food"
                       passHref
                     >
-                      <img
-                        className="h-24 w-24 object-cover"
-                        src="https://images-na.ssl-images-amazon.com/images/I/81x7cxq8HeL._SX425_.jpg"
+                      <Image
+                        height={100}
+                        width={100}
+                        src="https://m.media-amazon.com/images/I/71-FhSJVzlL._AC_UL480_FMwebp_QL65_.jpg"
+                        objectFit='contain'
                       />
                     </Link>
                     <div className="pl-4">
@@ -273,7 +289,7 @@ export default function BrowseCategories() {
                       </div>
                     </div>
                   </div>
-                  <div className="text-yellow-600 pl-4">
+                  <div className="text-yellow-600 pl-2">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       className="h-4 w-4"
@@ -297,9 +313,11 @@ export default function BrowseCategories() {
                 <div className="flex justify-between items-center">
                   <div className="inline-flex justify-start items-center">
                     <Link href="/category/Breakfast & Dairy" passHref>
-                      <img
-                        className="h-24 w-24 object-cover"
+                      <Image
+                        height={100}
+                        width={100}
                         src="https://m.media-amazon.com/images/I/71cqU2ZyPNL._AC_UL480_FMwebp_QL65_.jpg"
+                        objectFit='contain'
                       />
                     </Link>
                     <div className="pl-4">
@@ -313,7 +331,7 @@ export default function BrowseCategories() {
                       </div>
                     </div>
                   </div>
-                  <div className="text-yellow-600 pl-4">
+                  <div className="text-yellow-600 pl-2">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       className="h-4 w-4"
@@ -337,8 +355,9 @@ export default function BrowseCategories() {
                 <div className="flex justify-between items-center">
                   <div className="inline-flex justify-start items-center">
                     <Link href="/category/Grocery & Staples" passHref>
-                      <img
-                        className="h-24 w-24 object-cover"
+                      <Image
+                        height={100}
+                        width={100}
                         src="https://m.media-amazon.com/images/I/61n1hm72dlL._AC_UL480_FMwebp_QL65_.jpg"
                       />
                     </Link>
@@ -353,7 +372,7 @@ export default function BrowseCategories() {
                       </div>
                     </div>
                   </div>
-                  <div className="text-yellow-600 pl-4">
+                  <div className="text-yellow-600 pl-2">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       className="h-4 w-4"
@@ -376,5 +395,5 @@ export default function BrowseCategories() {
         </div>
       </div>
     </div>
-  );
+    );
 }

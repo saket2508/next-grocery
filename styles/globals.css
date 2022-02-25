@@ -61,6 +61,14 @@ a {
   color: #212529;
   background-color: #fff;
   background-clip: padding-box;
-  border: 1px solid #ced4da;
+  /* border: 1px solid #ced4da; */
   border-radius: .25rem;
+}
+
+.textfield:focus{
+  outline: none;
+}
+
+.emojiStyles {
+  padding-right: 0.2rem;
 }
