@@ -46,14 +46,16 @@ const Search: NextPage<SearchProps> = (props: SearchProps) => {
                             <div className="text-sm flex text-yellow-600">
                                 <Link href="/">Home</Link>
                                 <div className="pl-2">{`>`}</div>
-                                <div className="pl-2 text-gray-600">Results for {query}</div>
+                                <div className="pl-2 text-gray-600">
+                                    {`Results for \"${query}\"`}
+                                </div>
                             </div>
                         </div>
                         <div className="flex flex-col justify-center items-center">
                             <Image
                                 alt="No Results found"
-                                width={400}
-                                height={400}
+                                width={300}
+                                height={300}
                                 src="/assets/cart_empty.png"
                             />
                             <div className="mt-3 mb-4 text-center">
@@ -86,10 +88,12 @@ const Search: NextPage<SearchProps> = (props: SearchProps) => {
                                 <div className="text-sm flex text-yellow-600">
                                     <Link href="/">Home</Link>
                                     <div className="pl-2">{`>`}</div>
-                                    <div className="pl-2 text-gray-600">Results for {query}</div>
+                                    <div className="pl-2 text-gray-600">
+                                        {`Results for \"${query}\"`}
+                                    </div>
                                 </div>
                                 <div className="text-lg sm:text-2xl pt-6 font-semibold">
-                                    Results for {query}
+                                    {`Results for \"${query}\"`}
                                 </div>
                             </div>
                         </div>

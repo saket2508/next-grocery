@@ -76,9 +76,9 @@ export const products: Product[] = [
         discount: '15',
         price: '101',
         quantity: '1 x 1 L',
-        img: 'https://cdn.grofers.com/cdn-cgi/image/f=auto,fit=scale-down,q=50,h=280/app/images/products/normal/pro_368445.jpg',
+        img: 'https://m.media-amazon.com/images/I/612I6dtnY8L._AC_UL480_FMwebp_QL65_.jpg',
         category: 'Noodles, Sauces & Instant Food',
-        img_lg: 'https://cdn.grofers.com/app/images/products/full_screen/pro_368445.jpg',
+        img_lg: 'https://m.media-amazon.com/images/I/612I6dtnY8L._SL1000_.jpg',
         tags: [
             'Ketchup',
             'Kissan Tomato Ketchup',

@@ -43,8 +43,8 @@ const Cart: NextPage = () => {
                         <div className="flex flex-col justify-center items-center">
                             <Image
                                 alt="Empty Cart"
-                                width={400}
-                                height={400}
+                                width={300}
+                                height={300}
                                 src="/assets/cart_empty.png"
                             />
                             <div className="mt-3 mb-4 text-center">
@@ -99,26 +99,21 @@ const Cart: NextPage = () => {
                                             <div className="px-4 py-2 bg-white border border-gray-300">
                                                 <div className="flex flex-col sm:flex-row justify-between items-center">
                                                     <div className="flex justify-start items-center">
-                                                        <div className="pr-8 sm:pr-2 mr-2">
+                                                        <div className="pr-4 w-1/4 sm:w-auto sm:pr-2 mr-2">
                                                             <Link
                                                                 href={`/category/${item.category}/${item.id}`}
                                                                 passHref
                                                             >
                                                                 <Image
                                                                     alt={item.name}
-                                                                    height={125}
-                                                                    width={125}
+                                                                    height={150}
+                                                                    width={150}
                                                                     src={item.img_lg}
-                                                                    objectFit='cover'
+                                                                    objectFit="cover"
                                                                 />
-                                                                {/* <img
-                                                                    alt={item.name}
-                                                                    className="h-24 w-16 sm:h-32 sm:w-32 object-cover"
-                                                                    src={item.img_lg}
-                                                                /> */}
                                                             </Link>
                                                         </div>
-                                                        <div className="block sm:hidden flex-1 flex-col sm:flex-row">
+                                                        <div className="block sm:hidden w-3/5 flex-col">
                                                             <Link
                                                                 href={`/category/${item.category}/${item.id}`}
                                                                 passHref
@@ -134,7 +129,7 @@ const Cart: NextPage = () => {
                                                                 Qty: {item.items}
                                                             </div>
                                                         </div>
-                                                        <div className="flex-0 pl-6 text-sm text-black font-bold sm:flex-none sm:hidden">
+                                                        <div className="pl-6 w-3/20 text-sm text-black font-bold sm:hidden">
                                                             ₹{parseInt(item.price) * item.items!}
                                                         </div>
                                                         <div className="flex flex-col hidden sm:block">

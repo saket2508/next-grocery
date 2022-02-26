@@ -79,10 +79,6 @@ const Product: NextPage<ProductProps> = (props: ProductProps) => {
                                             />
                                         </div>
                                     </div>
-                                    {/* <img
-                                        src={product.img_lg}
-                                        className="object-fit h-48 w-48 md:h-96 md:w-96 md:pb-10 md:pr-10"
-                                    /> */}
                                     <div className="flex flex-col items-center md:items-start lg:pl-10 md:pt-10">
                                         {product.discount && (
                                             <div className="hidden sm:block my-2 w-16">
@@ -91,7 +87,7 @@ const Product: NextPage<ProductProps> = (props: ProductProps) => {
                                                 </div>
                                             </div>
                                         )}
-                                        <div className="md:text-2xl fomt-semibold text-center md:text-left">
+                                        <div className="md:text-2xl fomt-semibold text-center md:text-left mt-2 sm:m-0">
                                             {product.name}
                                         </div>
                                         <div className="text-sm text-gray-600 py-1">

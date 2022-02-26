@@ -21,8 +21,8 @@ const Error: NextPage<ErrorProps> = (props: ErrorProps) => {
                     <div className="mt-10 flex flex-col justify-center items-center">
                         <Image
                             alt="Server Error"
-                            height={400}
-                            width={400}
+                            height={300}
+                            width={300}
                             src="/assets/server_error.png"
                         />
                         <h1 className="text-4xl text-black pt-4">Error</h1>
@@ -46,8 +46,8 @@ const Error: NextPage<ErrorProps> = (props: ErrorProps) => {
                 <div className="mt-10 flex flex-col justify-center items-center">
                     <Image
                         alt="Page Not Found"
-                        height={400}
-                        width={400}
+                        height={300}
+                        width={300}
                         src="/assets/not_found.png"
                     />
                     <h1 className="text-5xl text-black pt-4">404</h1>

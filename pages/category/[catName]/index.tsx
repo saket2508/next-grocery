@@ -68,10 +68,6 @@ const Category: NextPage<CategoryProps> = (props: CategoryProps) => {
                                                         href={`/category/${catName}/${item.id}`}
                                                         passHref
                                                     >
-                                                        {/* <img
-                                                            className="h-32 w-32 object-fit"
-                                                            src={item.img_lg}
-                                                        /> */}
                                                         <Image
                                                             alt={item.name}
                                                             src={item.img_lg}

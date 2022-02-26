@@ -53,12 +53,12 @@ const Login: NextPage = () => {
             .catch((err) => {
                 console.error(err);
                 setIsLoading(false);
-                if(err.response?.status === 401) {
+                if (err.response?.status === 401) {
                     setNotif({
                         success: false,
                         message: 'Invalid email or password',
                     });
-                    return
+                    return;
                 }
                 setNotif({
                     success: false,
@@ -75,11 +75,11 @@ const Login: NextPage = () => {
                 <link rel="icon" href="/favicon.ico" />
             </Head>
             <main className="max-w-full">
-                <div className="pt-10 flex justify-center">
+                <div className="pt-6 flex justify-center">
                     <div className="w-full mx-4 sm:m-0 md:w-3/4 lg:w-1/2 xl:w-1/3">
                         <div className="inline-block">
                             <Link href="/" passHref>
-                                <div className="flex items-center gap-1 text-sm font-bold text-gray-500 mb-4">
+                                <div className="flex items-center gap-1 text-sm font-bold text-gray-500 mb-2">
                                     <svg
                                         xmlns="http://www.w3.org/2000/svg"
                                         className="h-4 w-4"
@@ -98,7 +98,7 @@ const Login: NextPage = () => {
                                 </div>
                             </Link>
                         </div>
-                        <div className="bg-white border border-gray-300 px-6 py-4 w-full">
+                        <div className="bg-white border border-gray-300 p-6 w-full">
                             <h3 className="mt-1 text-center font-semibold uppercase">Sign in</h3>
                             <Formik
                                 initialValues={{
@@ -111,11 +111,8 @@ const Login: NextPage = () => {
                                 }}
                             >
                                 {({ errors, touched }) => (
-                                    <Form className="mt-6 w-full flex flex-col w-full">
+                                    <Form className="mt-4 w-full flex flex-col w-full">
                                         <div className="mb-3 flex-grow-1">
-                                            <label htmlFor="email" className="text-gray-800">
-                                                Email
-                                            </label>
                                             <div className="mt-2">
                                                 <Field
                                                     id="email"
@@ -135,11 +132,7 @@ const Login: NextPage = () => {
                                             </div>
                                         </div>
                                         <div className="mb-3 flex-grow-1">
-                                            <div className="flex justify-between items-end">
-                                                <label htmlFor="password" className="text-gray-800">
-                                                    Password
-                                                </label>
-                                            </div>
+                                            <div className="flex justify-between items-end"></div>
                                             <div className="mt-2">
                                                 <Field
                                                     type="password"
@@ -160,13 +153,25 @@ const Login: NextPage = () => {
                                             </div>
                                             {notif && !notif.success && (
                                                 <small className="text-red-500 font-medium">
-                                                    <span className='emojiStyles' aria-label="error" role="img">❌</span>
+                                                    <span
+                                                        className="emojiStyles"
+                                                        aria-label="error"
+                                                        role="img"
+                                                    >
+                                                        ❌
+                                                    </span>
                                                     {notif.message}
                                                 </small>
                                             )}
                                             {notif && notif.success && (
                                                 <small className="text-green-600 font-medium">
-                                                    <span className='emojiStyles' aria-label="success" role="img">✅</span>
+                                                    <span
+                                                        className="emojiStyles"
+                                                        aria-label="success"
+                                                        role="img"
+                                                    >
+                                                        ✅
+                                                    </span>
                                                     {notif.message}
                                                 </small>
                                             )}
@@ -174,10 +179,30 @@ const Login: NextPage = () => {
                                         <div className="mt-3 mb-3 flex-grow-1">
                                             {isLoading ? (
                                                 <button
-                                                    className="bg-gray-700 opacity-50 text-sm sm:text-base text-white p-2 rounded-full uppercase w-full"
+                                                    className="bg-gray-700 inline-flex justify-center items-center opacity-75 text-sm sm:text-base text-white p-2 rounded-full uppercase w-full cursor-not-allowed"
                                                     disabled
                                                 >
-                                                    Loading...
+                                                    <svg
+                                                        className="animate-spin -ml-1 mr-3 h-5 w-5 text-white"
+                                                        xmlns="http://www.w3.org/2000/svg"
+                                                        fill="none"
+                                                        viewBox="0 0 24 24"
+                                                    >
+                                                        <circle
+                                                            className="opacity-25"
+                                                            cx="12"
+                                                            cy="12"
+                                                            r="10"
+                                                            stroke="currentColor"
+                                                            stroke-width="4"
+                                                        ></circle>
+                                                        <path
+                                                            className="opacity-75"
+                                                            fill="currentColor"
+                                                            d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
+                                                        ></path>
+                                                    </svg>
+                                                    Logging in
                                                 </button>
                                             ) : (
                                                 <button
