@@ -98,20 +98,22 @@ const Cart: NextPage = () => {
                                         <div key={idx}>
                                             <div className="px-4 py-2 bg-white border border-gray-300">
                                                 <div className="flex flex-col sm:flex-row justify-between items-center">
-                                                    <div className="flex justify-start items-center">
-                                                        <div className="pr-4 w-1/4 sm:w-auto sm:pr-2 mr-2">
-                                                            <Link
-                                                                href={`/category/${item.category}/${item.id}`}
-                                                                passHref
-                                                            >
-                                                                <Image
-                                                                    alt={item.name}
-                                                                    height={150}
-                                                                    width={150}
-                                                                    src={item.img_lg}
-                                                                    objectFit="cover"
-                                                                />
-                                                            </Link>
+                                                    <div className="flex w-full justify-start items-center">
+                                                        <div className="w-1/4 sm:w-auto sm:pr-2 pr-4">
+                                                            <span className='h-full w-full'>
+                                                                <Link
+                                                                    href={`/category/${item.category}/${item.id}`}
+                                                                    passHref
+                                                                >
+                                                                    <Image
+                                                                        alt={item.name}
+                                                                        height={150}
+                                                                        width={150}
+                                                                        src={item.img_lg}
+                                                                        objectFit="cover"
+                                                                    />
+                                                                </Link>
+                                                            </span>
                                                         </div>
                                                         <div className="block sm:hidden w-3/5 flex-col">
                                                             <Link
@@ -120,7 +122,7 @@ const Cart: NextPage = () => {
                                                             >
                                                                 <div
                                                                     style={{ flex: '0 0 100%' }}
-                                                                    className="text-sm sm:text-lg max-w-full pr-8"
+                                                                    className="text-sm sm:text-lg max-w-full sm:pr-8"
                                                                 >
                                                                     {item.name}
                                                                 </div>
@@ -129,7 +131,7 @@ const Cart: NextPage = () => {
                                                                 Qty: {item.items}
                                                             </div>
                                                         </div>
-                                                        <div className="pl-6 w-3/20 text-sm text-black font-bold sm:hidden">
+                                                        <div className="pl-3 w-3/20 text-sm text-black font-bold sm:hidden">
                                                             ₹{parseInt(item.price) * item.items!}
                                                         </div>
                                                         <div className="flex flex-col hidden sm:block">
